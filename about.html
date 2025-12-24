@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanex Square | Vision & Leadership</title>
+    <meta name="description" content="The architects behind the Sovereign OS. Our mission is to automate labor and acquire global assets.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            dark: '#0A0A0A',
+                            surface: '#121212',
+                            cobalt: '#2E5BFF',
+                            white: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root { --glass-border: rgba(255, 255, 255, 0.08); --glass-bg: rgba(255, 255, 255, 0.03); }
+        body { background-color: #050505; color: #ffffff; }
+        .glass-panel { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(12px); }
+        
+        /* Manifesto Text Effect */
+        .manifesto-text {
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter uppercase font-heading group">
+                Yanex<span class="text-brand-cobalt group-hover:text-white transition-colors">Square</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse text-sm font-semibold tracking-wide uppercase text-gray-400">
+                <a href="ai-services.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-ai">AI Services</a>
+                <a href="real-estate.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-re">Real Estate</a>
+                <a href="wealth.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-wealth">Wealth Hub</a>
+                <a href="about.html" class="text-white border-b-2 border-white pb-1" data-i18n="nav-about">About</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" class="text-xs font-bold border border-white/20 px-3 py-1.5 rounded hover:border-brand-cobalt transition-all">
+                    <span id="lang-display">العربية</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-24 px-6">
+        <div class="max-w-5xl mx-auto text-center md:text-left rtl:md:text-right">
+            <div class="text-brand-cobalt font-bold tracking-widest text-xs uppercase mb-6" data-i18n="hero-tag">The Origin Story</div>
+            <h1 class="text-4xl md:text-7xl font-bold font-heading mb-10 leading-tight manifesto-text">
+                <span data-i18n="hero-h1">We do not predict the future. We engineer it.</span>
+            </h1>
+            <div class="grid md:grid-cols-2 gap-12">
+                <p class="text-lg text-gray-400 leading-relaxed" data-i18n="hero-p1">
+                    The world is bifurcating into two classes: those who are automated, and those who own the automation. Yanex Square was built to ensure our partners remain on the sovereign side of that equation.
+                </p>
+                <p class="text-lg text-gray-400 leading-relaxed" data-i18n="hero-p2">
+                    We combine the relentless logic of Artificial Intelligence with the tangible security of Global Real Estate. We are not just a company; we are an operating system for the next generation of wealth.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="border-y border-white/10 bg-brand-surface py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold font-heading text-white mb-2">2023</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest" data-i18n="stat-1">Established</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold font-heading text-brand-cobalt">$12M+</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest" data-i18n="stat-2">Assets Mngd</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold font-heading text-white">4</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest" data-i18n="stat-3">Global Offices</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold font-heading text-white">∞</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest" data-i18n="stat-4">Vision</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold font-heading mb-16 text-center" data-i18n="val-title">Operating Principles</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 text-6xl font-bold text-white group-hover:opacity-20 transition">01</div>
+                    <h3 class="text-xl font-bold mb-4 text-white" data-i18n="val-1-title">Sovereignty First</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="val-1-desc">
+                        We believe in ownership. Whether it's your data, your code, or your physical land—you must hold the keys. We reject dependency on third-party platforms.
+                    </p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 text-6xl font-bold text-white group-hover:opacity-20 transition">02</div>
+                    <h3 class="text-xl font-bold mb-4 text-white" data-i18n="val-2-title">Ruthless Automation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="val-2-desc">
+                        If a task can be done by a machine, it is a crime to waste human life on it. We build agents to handle the noise so you can focus on the signal.
+                    </p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 text-6xl font-bold text-white group-hover:opacity-20 transition">03</div>
+                    <h3 class="text-xl font-bold mb-4 text-white" data-i18n="val-3-title">Global Arbitrage</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="val-3-desc">
+                        We leverage geographic disparities. We earn in strong currencies, hire in emerging talent markets, and invest in high-growth territories.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-brand-surface">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold font-heading mb-16 text-center" data-i18n="team-title">The Architects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                
+                <div class="group">
+                    <div class="aspect-[4/5] bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
+                        <img src="images/jprofile.webp" class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition duration-700">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
+                            <div class="text-white font-bold text-lg">Muhammad Yaseen</div>
+                            <div class="text-brand-cobalt text-xs font-bold uppercase tracking-widest">Founder & Lead Architect</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-i18n="team-bio-1">
+                        Strategic Director focused on the convergence of AI logic and asset management. Building systems that outlive us.
+                    </p>
+                </div>
+
+                <div class="group">
+                    <div class="aspect-[4/5] bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
+                        <img src="images/Abdallah-Broker.jpg" class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition duration-700">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
+                            <div class="text-white font-bold text-lg">Aatif Abdullah</div>
+                            <div class="text-brand-cobalt text-xs font-bold uppercase tracking-widest">Head of Engineering</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-i18n="team-bio-2">
+                        LLM Specialist ensuring data privacy and agentic workflow reliability across all enterprise deployments.
+                    </p>
+                </div>
+
+                <div class="group">
+                    <div class="aspect-[4/5] bg-gray-800 rounded-xl mb-6 overflow-hidden relative">
+                        <img src="images/Angelica-Admin.jpg" class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition duration-700">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
+                            <div class="text-white font-bold text-lg">Angelica</div>
+                            <div class="text-brand-cobalt text-xs font-bold uppercase tracking-widest">Global Assets Director</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-i18n="team-bio-3">
+                        Managing our physical portfolio across Dubai, Southeast Asia, and the Americas.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 border-t border-white/10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold font-heading mb-8" data-i18n="contact-title">Initiate Contact</h2>
+            <p class="text-gray-400 mb-12" data-i18n="contact-sub">
+                We operate decentrally, but our digital HQ is always open. For strategic partnerships or high-ticket inquiries.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <a href="mailto:strategy@yanexsquare.com" class="glass-panel p-6 rounded-xl hover:bg-white/10 transition flex items-center justify-center gap-4">
+                    <svg class="w-6 h-6 text-brand-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span class="font-bold text-sm tracking-wider">strategy@yanexsquare.com</span>
+                </a>
+                <a href="#" class="glass-panel p-6 rounded-xl hover:bg-white/10 transition flex items-center justify-center gap-4">
+                    <svg class="w-6 h-6 text-brand-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span class="font-bold text-sm tracking-wider" data-i18n="loc-text">Digital HQ / Global</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="border-t border-white/10 bg-black py-16 px-6 text-center">
+        <h2 class="text-2xl font-bold font-heading mb-6 uppercase">Yanex<span class="text-brand-cobalt">Square</span></h2>
+        <div class="text-xs text-gray-700 uppercase tracking-widest">© 2025 Sovereign Systems.</div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "nav-ai": "AI Services",
+                "nav-re": "Real Estate",
+                "nav-wealth": "Wealth Hub",
+                "nav-about": "About",
+                "hero-tag": "The Origin Story",
+                "hero-h1": "We do not predict the future. We engineer it.",
+                "hero-p1": "The world is bifurcating into two classes: those who are automated, and those who own the automation. Yanex Square was built to ensure our partners remain on the sovereign side of that equation.",
+                "hero-p2": "We combine the relentless logic of Artificial Intelligence with the tangible security of Global Real Estate. We are not just a company; we are an operating system for the next generation of wealth.",
+                "stat-1": "Established",
+                "stat-2": "Assets Mngd",
+                "stat-3": "Global Offices",
+                "stat-4": "Vision",
+                "val-title": "Operating Principles",
+                "val-1-title": "Sovereignty First",
+                "val-1-desc": "We believe in ownership. Whether it's your data, your code, or your physical land—you must hold the keys. We reject dependency on third-party platforms.",
+                "val-2-title": "Ruthless Automation",
+                "val-2-desc": "If a task can be done by a machine, it is a crime to waste human life on it. We build agents to handle the noise so you can focus on the signal.",
+                "val-3-title": "Global Arbitrage",
+                "val-3-desc": "We leverage geographic disparities. We earn in strong currencies, hire in emerging talent markets, and invest in high-growth territories.",
+                "team-title": "The Architects",
+                "team-bio-1": "Strategic Director focused on the convergence of AI logic and asset management. Building systems that outlive us.",
+                "team-bio-2": "LLM Specialist ensuring data privacy and agentic workflow reliability across all enterprise deployments.",
+                "team-bio-3": "Managing our physical portfolio across Dubai, Southeast Asia, and the Americas.",
+                "contact-title": "Initiate Contact",
+                "contact-sub": "We operate decentrally, but our digital HQ is always open. For strategic partnerships or high-ticket inquiries.",
+                "loc-text": "Digital HQ / Global"
+            },
+            ar: {
+                "nav-ai": "خدمات الذكاء الاصطناعي",
+                "nav-re": "الاستثمار العقاري",
+                "nav-wealth": "مركز الثروة",
+                "nav-about": "من نحن",
+                "hero-tag": "قصة التأسيس",
+                "hero-h1": "نحن لا نتنبأ بالمستقبل. نحن نهندسه.",
+                "hero-p1": "العالم ينقسم إلى طبقتين: أولئك الذين يتم أتمتتهم، وأولئك الذين يملكون الأتمتة. تأسست Yanex Square لضمان بقاء شركائنا في الجانب السيادي من تلك المعادلة.",
+                "hero-p2": "نجمع بين المنطق الصارم للذكاء الاصطناعي والأمن الملموس للعقارات العالمية. نحن لسنا مجرد شركة؛ نحن نظام تشغيل للجيل القادم من الثروة.",
+                "stat-1": "تأسست",
+                "stat-2": "الأصول المدارة",
+                "stat-3": "مكاتب عالمية",
+                "stat-4": "الرؤية",
+                "val-title": "مبادئ التشغيل",
+                "val-1-title": "السيادة أولاً",
+                "val-1-desc": "نحن نؤمن بالملكية. سواء كانت بياناتك، أو الكود الخاص بك، أو أرضك المادية—يجب أن تحتفظ بالمفاتيح. نرفض التبعية لمنصات الطرف الثالث.",
+                "val-2-title": "الأتمتة الصارمة",
+                "val-2-desc": "إذا كان يمكن للآلة القيام بمهمة ما، فمن الجريمة إضاعة حياة الإنسان عليها. نبني وكلاء للتعامل مع الضوضاء حتى تتمكن من التركيز على الإشارة.",
+                "val-3-title": "المراجحة العالمية",
+                "val-3-desc": "نستفيد من الفوارق الجغرافية. نكسب بعملات قوية، ونوظف في أسواق المواهب الناشئة، ونستثمر في المناطق عالية النمو.",
+                "team-title": "المهندسون",
+                "team-bio-1": "مدير استراتيجي يركز على تقارب منطق الذكاء الاصطناعي وإدارة الأصول. بناء أنظمة تدوم أطول منا.",
+                "team-bio-2": "أخصائي نماذج اللغة الكبيرة لضمان خصوصية البيانات وموثوقية سير عمل الوكلاء عبر جميع نشرات المؤسسات.",
+                "team-bio-3": "إدارة محفظتنا المادية عبر دبي، جنوب شرق آسيا، والأمريكتين.",
+                "contact-title": "ابدأ الاتصال",
+                "contact-sub": "نعمل بشكل لا مركزي، لكن مقرنا الرقمي مفتوح دائماً. للشراكات الاستراتيجية أو الاستفسارات عالية القيمة.",
+                "loc-text": "المقر الرقمي / عالمي"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            const html = document.documentElement;
+            const langBtn = document.getElementById('lang-display');
+            
+            html.lang = currentLang;
+            html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            langBtn.textContent = currentLang === 'en' ? 'العربية' : 'English';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>

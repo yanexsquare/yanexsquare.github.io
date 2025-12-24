@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanex Square | Wealth Intelligence & Sovereign Mindset</title>
+    <meta name="description" content="Decoding the algorithms of wealth, freedom, and system architecture. The official journal of Yanex Square.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;700&family=Space+Grotesk:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            dark: '#0A0A0A',
+                            surface: '#121212',
+                            cobalt: '#2E5BFF',
+                            paper: '#E5E5E5' 
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Lora', 'serif'], 
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root { --glass-border: rgba(255, 255, 255, 0.08); --glass-bg: rgba(255, 255, 255, 0.03); }
+        body { background-color: #050505; color: #ffffff; }
+        .glass-panel { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(12px); }
+        
+        .prose-preview {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Fade Animation for Tabs */
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-cobalt selection:text-white">
+
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter uppercase font-heading group">
+                Yanex<span class="text-brand-cobalt group-hover:text-white transition-colors">Square</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse text-sm font-semibold tracking-wide uppercase text-gray-400">
+                <a href="ai-services.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-ai">AI Services</a>
+                <a href="real-estate.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-re">Real Estate</a>
+                <a href="wealth.html" class="text-white border-b-2 border-brand-cobalt pb-1" data-i18n="nav-wealth">Wealth Hub</a>
+                <a href="about.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-about">About</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" class="text-xs font-bold border border-white/20 px-3 py-1.5 rounded hover:border-brand-cobalt transition-all">
+                    <span id="lang-display">العربية</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-16 px-6 border-b border-white/10 bg-[#080808]">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-block px-3 py-1 mb-6 border border-white/20 rounded-full text-[10px] tracking-[0.2em] uppercase text-gray-400">
+                <span class="w-2 h-2 rounded-full bg-brand-cobalt inline-block mr-2"></span>
+                <span data-i18n="hero-tag">The Sovereign Protocol</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-bold font-heading mb-8 tracking-tight">
+                <span data-i18n="hero-h1">Wealth Intelligence.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 font-serif italic max-w-2xl mx-auto" data-i18n="hero-sub">
+                "Decoding the algorithms of freedom, system architecture, and asset allocation."
+            </p>
+        </div>
+    </header>
+
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center group cursor-pointer">
+                <div class="relative overflow-hidden rounded-2xl aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2000&auto=format&fit=crop" class="object-cover w-full h-full group-hover:scale-105 transition duration-700 grayscale group-hover:grayscale-0">
+                    <div class="absolute top-4 left-4 bg-brand-cobalt text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">
+                        <span data-i18n="cat-ai">AI Strategy</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4">Dec 24, 2025 • 8 Min Read</div>
+                    <h2 class="text-3xl md:text-5xl font-bold font-heading mb-6 leading-tight group-hover:text-brand-cobalt transition-colors" data-i18n="feat-title">
+                        The Death of the Employee: Why Agentic AI is the New Workforce.
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed prose-preview" data-i18n="feat-desc">
+                        We are entering a phase where one architect can command a digital army of thousands. Here is the blueprint for building your first autonomous revenue loop using open-source LLMs.
+                    </p>
+                    <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white border-b border-transparent group-hover:border-white w-max pb-1 transition-all">
+                        <span data-i18n="btn-read">Read Full Protocol</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-brand-surface border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex gap-8 border-b border-white/10 pb-4 mb-12 overflow-x-auto">
+                <button onclick="filterContent('all')" id="tab-all" class="tab-btn text-white font-bold border-b-2 border-brand-cobalt pb-4 whitespace-nowrap transition-colors" data-i18n="tab-all">Latest Transmissions</button>
+                <button onclick="filterContent('re')" id="tab-re" class="tab-btn text-gray-500 hover:text-white border-b-2 border-transparent pb-4 whitespace-nowrap transition-colors" data-i18n="tab-re">Real Estate</button>
+                <button onclick="filterContent('sys')" id="tab-sys" class="tab-btn text-gray-500 hover:text-white border-b-2 border-transparent pb-4 whitespace-nowrap transition-colors" data-i18n="tab-sys">Systems</button>
+                <button onclick="filterContent('mind')" id="tab-mind" class="tab-btn text-gray-500 hover:text-white border-b-2 border-transparent pb-4 whitespace-nowrap transition-colors" data-i18n="tab-mind">Mindset</button>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-x-8 gap-y-16" id="article-grid">
+    
+                <a href="article-recession-arbitrage.html" class="group cursor-pointer article-card block" data-category="re">
+                    <div class="aspect-video bg-gray-900 rounded-xl mb-6 overflow-hidden border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" class="object-cover w-full h-full opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="text-brand-cobalt text-xs font-bold uppercase tracking-widest mb-3" data-i18n="cat-re">Real Estate</div>
+                    <h3 class="text-xl font-bold font-heading mb-3 group-hover:underline decoration-gray-600 underline-offset-4" data-i18n="p1-title">Global Arbitrage: Buying in Recession Markets</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed" data-i18n="p1-desc">How to identify when a market has bottomed out using simple permit data indicators.</p>
+                </a>
+
+                <a href="article-0-to-10k-roadmap.html" class="group cursor-pointer article-card block" data-category="sys">
+                    <div class="aspect-video bg-gray-900 rounded-xl mb-6 overflow-hidden border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" 
+                            class="object-cover w-full h-full opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="text-brand-cobalt text-xs font-bold uppercase tracking-widest mb-3" data-i18n="cat-sys">Systems</div>
+                    <h3 class="text-xl font-bold font-heading mb-3 group-hover:underline decoration-gray-600 underline-offset-4" data-i18n="p2-title">The $0 to $10k Roadmap (No Code)</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed" data-i18n="p2-desc">A step-by-step breakdown of setting up a service agency using nothing but Zapier and OpenAI.</p>
+                </a>
+
+                <a href="article-dopamine-focus.html" class="group cursor-pointer article-card block" data-category="mind">
+                    <div class="aspect-video bg-gray-900 rounded-xl mb-6 overflow-hidden border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800" class="object-cover w-full h-full opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="text-brand-cobalt text-xs font-bold uppercase tracking-widest mb-3" data-i18n="cat-mind">Mindset</div>
+                    <h3 class="text-xl font-bold font-heading mb-3 group-hover:underline decoration-gray-600 underline-offset-4" data-i18n="p3-title">Kill the Dopamine: Focus Protocols</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed" data-i18n="p3-desc">Why your ability to stare at a wall is directly correlated to your net worth.</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto glass-panel p-12 rounded-3xl text-center border border-brand-cobalt/30 relative overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-cobalt/10 blur-[100px] -z-10"></div>
+            
+            <h2 class="text-3xl md:text-5xl font-bold font-heading mb-6" data-i18n="nl-head">Join the Sovereign 1%</h2>
+            <p class="text-gray-400 mb-10 max-w-lg mx-auto" data-i18n="nl-sub">
+                Get our weekly "State of the System" report. High-signal analysis on AI trends and off-market deal flow. Zero noise.
+            </p>
+            
+            <form onsubmit="sendEmailToWhatsapp(event)" class="max-w-md mx-auto flex flex-col gap-4">
+                <input id="sub-email" type="email" placeholder="Your primary email address" required class="w-full bg-black border border-white/20 rounded-lg px-6 py-4 text-white focus:outline-none focus:border-brand-cobalt transition text-center placeholder-gray-600">
+                <button type="submit" class="w-full bg-brand-cobalt text-white font-bold py-4 rounded-lg hover:bg-white hover:text-black transition uppercase tracking-widest text-sm" data-i18n="nl-btn">
+                    Initialize Access
+                </button>
+            </form>
+            <div class="mt-6 text-xs text-gray-600">
+                <span data-i18n="nl-disclaimer">Join 12,000+ Architects. Unsubscribe anytime.</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="border-t border-white/10 bg-black py-16 px-6 text-center">
+        <div class="mb-8">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter uppercase font-heading">
+                Yanex<span class="text-brand-cobalt">Square</span>
+            </a>
+        </div>
+        <div class="flex justify-center gap-8 text-sm font-bold uppercase tracking-widest text-gray-500 mb-12">
+            <a href="ai-services.html" class="hover:text-white transition" data-i18n="nav-ai">AI Services</a>
+            <a href="real-estate.html" class="hover:text-white transition" data-i18n="nav-re">Real Estate</a>
+            <a href="#" class="hover:text-white transition" data-i18n="nav-wealth">Wealth Hub</a>
+        </div>
+        <div class="text-xs text-gray-700 uppercase tracking-widest">© 2025 Yanex Square Media.</div>
+    </footer>
+
+    <script>
+        // --- 1. FILTERING LOGIC ---
+        function filterContent(category) {
+            // 1. Get all articles
+            const articles = document.querySelectorAll('.article-card');
+            
+            // 2. Loop through and show/hide
+            articles.forEach(article => {
+                // Reset animation
+                article.classList.remove('fade-in');
+                void article.offsetWidth; // trigger reflow
+
+                if (category === 'all' || article.getAttribute('data-category') === category) {
+                    article.style.display = 'block';
+                    article.classList.add('fade-in');
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            // 3. Update Buttons (UI)
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('text-white', 'border-brand-cobalt');
+                btn.classList.add('text-gray-500', 'border-transparent');
+            });
+
+            // Highlight Active Button
+            const activeBtn = document.getElementById('tab-' + category);
+            activeBtn.classList.remove('text-gray-500', 'border-transparent');
+            activeBtn.classList.add('text-white', 'border-brand-cobalt');
+        }
+
+        // --- 2. WHATSAPP LOGIC ---
+        function sendEmailToWhatsapp(e) {
+            e.preventDefault();
+            const email = document.getElementById('sub-email').value;
+            const message = "I want to join the Sovereign Wealth Newsletter. My email is: " + email;
+            const whatsappUrl = "https://wa.me/923029770128?text=" + encodeURIComponent(message);
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // --- 3. TRANSLATION LOGIC ---
+        const translations = {
+            en: {
+                "nav-ai": "AI Services",
+                "nav-re": "Real Estate",
+                "nav-wealth": "Wealth Hub",
+                "nav-about": "About",
+                "hero-tag": "The Sovereign Protocol",
+                "hero-h1": "Wealth Intelligence.",
+                "hero-sub": "\"Decoding the algorithms of freedom, system architecture, and asset allocation.\"",
+                "cat-ai": "AI Strategy",
+                "feat-title": "The Death of the Employee: Why Agentic AI is the New Workforce.",
+                "feat-desc": "We are entering a phase where one architect can command a digital army of thousands. Here is the blueprint for building your first autonomous revenue loop.",
+                "btn-read": "Read Full Protocol",
+                "tab-all": "Latest Transmissions",
+                "tab-re": "Real Estate",
+                "tab-sys": "Systems",
+                "tab-mind": "Mindset",
+                "cat-re": "Real Estate",
+                "p1-title": "Global Arbitrage: Buying in Recession Markets",
+                "p1-desc": "How to identify when a market has bottomed out using simple permit data indicators.",
+                "cat-sys": "Systems",
+                "p2-title": "The $0 to $10k Roadmap (No Code)",
+                "p2-desc": "A step-by-step breakdown of setting up a service agency using nothing but Zapier and OpenAI.",
+                "cat-mind": "Mindset",
+                "p3-title": "Kill the Dopamine: Focus Protocols",
+                "p3-desc": "Why your ability to stare at a wall is directly correlated to your net worth.",
+                "nl-head": "Join the Sovereign 1%",
+                "nl-sub": "Get our weekly \"State of the System\" report. High-signal analysis on AI trends and off-market deal flow. Zero noise.",
+                "nl-btn": "Initialize Access",
+                "nl-disclaimer": "Join 12,000+ Architects. Unsubscribe anytime."
+            },
+            ar: {
+                "nav-ai": "خدمات الذكاء الاصطناعي",
+                "nav-re": "الاستثمار العقاري",
+                "nav-wealth": "مركز الثروة",
+                "nav-about": "من نحن",
+                "hero-tag": "البروتوكول السيادي",
+                "hero-h1": "ذكاء الثروة.",
+                "hero-sub": "\"فك شيفرة خوارزميات الحرية، هندسة النظم، وتخصيص الأصول.\"",
+                "cat-ai": "إستراتيجية الذكاء الاصطناعي",
+                "feat-title": "نهاية الموظف التقليدي: لماذا وكلاء الذكاء الاصطناعي هم القوى العاملة الجديدة.",
+                "feat-desc": "نحن ندخل مرحلة يمكن فيها لمهندس واحد أن يقود جيشاً رقمياً من الآلاف. إليك المخطط لبناء أول حلقة إيرادات مستقلة لك.",
+                "btn-read": "اقرأ البروتوكول الكامل",
+                "tab-all": "أحدث المقالات",
+                "tab-re": "عقارات",
+                "tab-sys": "أنظمة",
+                "tab-mind": "عقلية",
+                "cat-re": "عقارات",
+                "p1-title": "المراجحة العالمية: الشراء في أسواق الركود",
+                "p1-desc": "كيفية تحديد متى يصل السوق إلى القاع باستخدام مؤشرات بيانات التصاريح البسيطة.",
+                "cat-sys": "أنظمة",
+                "p2-title": "خارطة الطريق من 0 إلى 10 آلاف دولار (بدون برمجة)",
+                "p2-desc": "تفصيل خطوة بخطوة لإنشاء وكالة خدمات باستخدام Zapier و OpenAI فقط.",
+                "cat-mind": "عقلية",
+                "p3-title": "اقتل الدوبامين: بروتوكولات التركيز",
+                "p3-desc": "لماذا ترتبط قدرتك على التركيز ارتباطاً مباشراً بصافي ثروتك.",
+                "nl-head": "انضم إلى الـ 1% السياديين",
+                "nl-sub": "احصل على تقريرنا الأسبوعي \"حالة النظام\". تحليل عالي الإشارة حول اتجاهات الذكاء الاصطناعي وصفقات السوق غير المعلنة.",
+                "nl-btn": "تهيئة الوصول",
+                "nl-disclaimer": "انضم إلى أكثر من 12,000 مهندس. يمكنك إلغاء الاشتراك في أي وقت."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            const html = document.documentElement;
+            const langBtn = document.getElementById('lang-display');
+            
+            html.lang = currentLang;
+            html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            langBtn.textContent = currentLang === 'en' ? 'العربية' : 'English';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>

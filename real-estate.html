@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanex Square | Real Estate Alpha & Arbitrage</title>
+    <meta name="description" content="Global Real Estate Arbitrage using Predictive AI. Join the Sovereign Portfolio.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            dark: '#0A0A0A',
+                            surface: '#121212',
+                            cobalt: '#2E5BFF',
+                            gold: '#C5A059' // Gold for "Wealth/Assets" differentiation
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root { --glass-border: rgba(255, 255, 255, 0.08); --glass-bg: rgba(255, 255, 255, 0.03); }
+        body { background-color: #050505; color: #ffffff; }
+        .glass-panel { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(12px); }
+        
+        /* Chart Bar Animation */
+        .bar-grow { animation: growUp 1.5s ease-out forwards; transform-origin: bottom; transform: scaleY(0); }
+        @keyframes growUp { to { transform: scaleY(1); } }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-black">
+
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter uppercase font-heading group">
+                Yanex<span class="text-brand-cobalt group-hover:text-white transition-colors">Square</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse text-sm font-semibold tracking-wide uppercase text-gray-400">
+                <a href="ai-services.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-ai">AI Services</a>
+                <a href="real-estate.html" class="text-white border-b-2 border-brand-gold pb-1" data-i18n="nav-re">Real Estate</a>
+                <a href="wealth.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-wealth">Wealth Hub</a>
+                <a href="about.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-about">About</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" class="text-xs font-bold border border-white/20 px-3 py-1.5 rounded hover:border-brand-cobalt transition-all">
+                    <span id="lang-display">العربية</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-20 px-6 min-h-[70vh] flex items-center bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-black/80"></div>
+        
+        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
+            <div>
+                <div class="text-brand-gold font-bold tracking-widest text-xs uppercase mb-4 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                    <span data-i18n="hero-tag">Live Market Data</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold font-heading leading-tight mb-6">
+                    <span data-i18n="hero-title">Predictive<br>Arbitrage.</span>
+                </h1>
+                <p class="text-gray-300 text-lg mb-8 max-w-lg leading-relaxed" data-i18n="hero-desc">
+                    We use AI to identify undervalued properties 6-12 months before the market reacts. Global assets. Sovereign returns.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#portfolio" class="bg-brand-gold text-black px-8 py-4 rounded font-bold hover:bg-white transition text-center" data-i18n="cta-view">
+                        View Portfolio
+                    </a>
+                    <a href="#contact" class="glass-panel text-white px-8 py-4 rounded font-bold hover:border-brand-gold transition text-center" data-i18n="cta-invest">
+                        Investor Login
+                    </a>
+                </div>
+            </div>
+
+            <div class="glass-panel p-6 rounded-xl border border-white/10 relative mt-8 md:mt-0">
+                <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+                    <div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider">Asset Valuation</div>
+                        <div class="text-2xl font-bold font-heading">$12,450,000</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500 uppercase tracking-wider">Growth (YTD)</div>
+                        <div class="text-2xl font-bold font-heading text-green-500">+24.8%</div>
+                    </div>
+                </div>
+                
+                <div class="h-40 flex items-end justify-between gap-2 px-2">
+                    <div class="w-full bg-brand-cobalt/20 rounded-t h-[40%] relative group">
+                        <div class="absolute bottom-0 w-full bg-brand-cobalt/50 rounded-t h-full bar-grow" style="animation-delay: 0.1s"></div>
+                        <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Q1</div>
+                    </div>
+                    <div class="w-full bg-brand-cobalt/20 rounded-t h-[55%] relative group">
+                        <div class="absolute bottom-0 w-full bg-brand-cobalt/50 rounded-t h-full bar-grow" style="animation-delay: 0.2s"></div>
+                    </div>
+                    <div class="w-full bg-brand-cobalt/20 rounded-t h-[45%] relative group">
+                        <div class="absolute bottom-0 w-full bg-brand-cobalt/50 rounded-t h-full bar-grow" style="animation-delay: 0.3s"></div>
+                    </div>
+                    <div class="w-full bg-brand-cobalt/20 rounded-t h-[70%] relative group">
+                        <div class="absolute bottom-0 w-full bg-brand-cobalt/50 rounded-t h-full bar-grow" style="animation-delay: 0.4s"></div>
+                    </div>
+                    <div class="w-full bg-brand-cobalt/20 rounded-t h-[90%] relative group">
+                        <div class="absolute bottom-0 w-full bg-brand-gold rounded-t h-full bar-grow shadow-[0_0_15px_rgba(197,160,89,0.5)]" style="animation-delay: 0.5s"></div>
+                        <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-brand-gold text-black text-xs font-bold px-2 py-1 rounded">NOW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 bg-brand-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4" data-i18n="strat-title">The Alpha Strategy</h2>
+                    <div class="h-1 w-20 bg-brand-gold rounded-full"></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-xl hover:border-brand-gold/30 transition">
+                    <div class="text-brand-gold text-4xl mb-4 font-heading">01</div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="strat-1-head">Predictive Entry</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="strat-1-desc">
+                        Our algorithm analyzes 50+ variables (permit filings, zoning changes, sentiment) to identify neighborhoods 12 months from gentrification.
+                    </p>
+                </div>
+                <div class="glass-panel p-8 rounded-xl hover:border-brand-gold/30 transition">
+                    <div class="text-brand-gold text-4xl mb-4 font-heading">02</div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="strat-2-head">Forced Appreciation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="strat-2-desc">
+                        We acquire distressed assets and deploy efficient renovation teams to force equity value up by 30-40% within 90 days.
+                    </p>
+                </div>
+                <div class="glass-panel p-8 rounded-xl hover:border-brand-gold/30 transition">
+                    <div class="text-brand-gold text-4xl mb-4 font-heading">03</div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="strat-3-head">Cashflow Exit</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="strat-3-desc">
+                        Assets are either flipped for capital injection or refinanced and held for long-term sovereign cashflow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 px-6 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold font-heading mb-12 text-center" data-i18n="port-title">Active Markets</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group relative overflow-hidden rounded-2xl aspect-video cursor-pointer bg-gray-800">
+                    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Luxury Property"
+                         class="object-cover w-full h-full group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-100">
+                    
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-8">
+                        <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2">Dubai, UAE</div>
+                        <h3 class="text-2xl font-bold font-heading text-white">Luxury Short-Term Arbitrage</h3>
+                        <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                            Yield: 12-15% | Status: <span class="text-green-400">Acquiring</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl aspect-video cursor-pointer bg-gray-800">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Commercial Building"
+                         class="object-cover w-full h-full group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-100">
+                    
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-8">
+                        <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2">Austin, Texas</div>
+                        <h3 class="text-2xl font-bold font-heading text-white">Multi-Family Value Add</h3>
+                        <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                            Yield: 18% IRR | Status: <span class="text-blue-400">Renovation</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-500 text-sm mb-4" data-i18n="gated-msg">Detailed financials are available in the Investor Portal.</p>
+                <a href="https://wa.me/923029770128?text=I%20am%20interested%20in%20requesting%20access%20to%20the%20Investor%20Portal." 
+                target="_blank" 
+                class="inline-block border border-white/20 px-8 py-3 rounded text-sm font-bold hover:bg-white hover:text-black transition uppercase tracking-widest" 
+                data-i18n="btn-portal">
+                    Request Access
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="border-t border-white/10 bg-black py-16 px-6 text-center">
+        <h2 class="text-3xl font-bold font-heading mb-6" data-i18n="footer-head">Build Your Legacy.</h2>
+        <p class="text-gray-500 mb-8 max-w-lg mx-auto" data-i18n="footer-sub">
+            Join the Sovereign Capital network. Accredited investors only.
+        </p>
+        <form onsubmit="sendEmailToWhatsapp(event)" class="flex max-w-md mx-auto gap-2">
+            <input 
+                id="investor-email" 
+                type="email" 
+                placeholder="Email Address" 
+                required
+                class="flex-1 bg-white/5 border border-white/10 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold text-white"
+            >
+            <button type="submit" class="bg-brand-gold text-black px-6 py-3 rounded font-bold uppercase text-xs tracking-widest hover:bg-white transition">
+                Submit
+            </button>
+        </form>
+
+        <script>
+            function sendEmailToWhatsapp(e) {
+                // 1. Stop the page from refreshing
+                e.preventDefault();
+
+                // 2. Get the email the user typed
+                const email = document.getElementById('investor-email').value;
+
+                // 3. Create the message
+                const message = "I want to join the Sovereign Capital network. My email is: " + email;
+
+                // 4. Open WhatsApp
+                const whatsappUrl = "https://wa.me/923029770128?text=" + encodeURIComponent(message);
+                window.open(whatsappUrl, '_blank');
+            }
+        </script>
+        
+        <div class="mt-12 text-xs text-gray-700 uppercase tracking-widest">© 2025 Yanex Square Real Estate</div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "nav-ai": "AI Services",
+                "nav-re": "Real Estate",
+                "nav-wealth": "Wealth Hub",
+                "nav-about": "About",
+                "hero-tag": "Live Market Data",
+                "hero-title": "Predictive<br>Arbitrage.",
+                "hero-desc": "We use AI to identify undervalued properties 6-12 months before the market reacts. Global assets. Sovereign returns.",
+                "cta-view": "View Portfolio",
+                "cta-invest": "Investor Login",
+                "strat-title": "The Alpha Strategy",
+                "strat-1-head": "Predictive Entry",
+                "strat-1-desc": "Our algorithm analyzes 50+ variables (permit filings, zoning changes, sentiment) to identify neighborhoods 12 months from gentrification.",
+                "strat-2-head": "Forced Appreciation",
+                "strat-2-desc": "We acquire distressed assets and deploy efficient renovation teams to force equity value up by 30-40% within 90 days.",
+                "strat-3-head": "Cashflow Exit",
+                "strat-3-desc": "Assets are either flipped for capital injection or refinanced and held for long-term sovereign cashflow.",
+                "port-title": "Active Markets",
+                "gated-msg": "Detailed financials are available in the Investor Portal.",
+                "btn-portal": "Request Access",
+                "footer-head": "Build Your Legacy.",
+                "footer-sub": "Join the Sovereign Capital network. Accredited investors only."
+            },
+            ar: {
+                "nav-ai": "خدمات الذكاء الاصطناعي",
+                "nav-re": "الاستثمار العقاري",
+                "nav-wealth": "مركز الثروة",
+                "nav-about": "من نحن",
+                "hero-tag": "بيانات السوق الحية",
+                "hero-title": "المراجحة<br>التنبؤية.",
+                "hero-desc": "نستخدم الذكاء الاصطناعي لتحديد العقارات المقومة بأقل من قيمتها قبل تفاعل السوق بـ 6-12 شهرًا. أصول عالمية. عوائد سيادية.",
+                "cta-view": "شاهد المحفظة",
+                "cta-invest": "دخول المستثمرين",
+                "strat-title": "إستراتيجية ألفا",
+                "strat-1-head": "الدخول التنبؤي",
+                "strat-1-desc": "تقوم خوارزمياتنا بتحليل أكثر من 50 متغيرًا لتحديد الأحياء التي ستشهد تطورًا قبل 12 شهرًا من حدوثه.",
+                "strat-2-head": "زيادة القيمة القسرية",
+                "strat-2-desc": "نستحوذ على الأصول المتعثرة وننشر فرق تجديد لرفع قيمة الأسهم بنسبة 30-40٪ في غضون 90 يومًا.",
+                "strat-3-head": "الخروج بالتدفق النقدي",
+                "strat-3-desc": "يتم بيع الأصول لضخ رأس المال أو إعادة تمويلها والاحتفاظ بها لتدفق نقدي سيادي طويل الأجل.",
+                "port-title": "الأسواق النشطة",
+                "gated-msg": "البيانات المالية التفصيلية متاحة في بوابة المستثمرين.",
+                "btn-portal": "طلب الوصول",
+                "footer-head": "ابنِ إرثك.",
+                "footer-sub": "انضم إلى شبكة رأس المال السيادي. للمستثمرين المعتمدين فقط."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            const html = document.documentElement;
+            const langBtn = document.getElementById('lang-display');
+            
+            html.lang = currentLang;
+            html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            langBtn.textContent = currentLang === 'en' ? 'العربية' : 'English';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key]; // innerHTML used for <br> support
+                }
+            });
+        }
+    </script>
+</body>
+</html>
