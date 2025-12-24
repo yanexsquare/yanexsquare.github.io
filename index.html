@@ -1,345 +1,607 @@
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr" class="scroll-smooth">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Yanex Square | Sovereign Wealth Systems</title>
+
     <meta name="description" content="Yanex Square: The intersection of AI Consultancy, Real Estate Alpha, and Financial Intelligence.">
+
     
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+
     
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+
     <script>
+
         tailwind.config = {
+
             darkMode: 'class',
+
             theme: {
+
                 extend: {
+
                     colors: {
+
                         brand: {
+
                             black: '#050505',
+
                             dark: '#0A0A0A',
+
                             surface: '#121212',
+
                             cobalt: '#2E5BFF', 
+
                             glow: 'rgba(46, 91, 255, 0.5)'
+
                         }
+
                     },
+
                     fontFamily: {
+
                         sans: ['Inter', 'sans-serif'],
+
                         heading: ['Space Grotesk', 'sans-serif'],
+
                         arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+
                     },
+
                     animation: {
+
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'floating 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        floating: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
+
                     }
+
                 }
+
             }
+
         }
+
     </script>
+
+
 
     <style>
+
         :root { --glass-border: rgba(255, 255, 255, 0.08); --glass-bg: rgba(255, 255, 255, 0.03); }
+
         body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
+
         .glass-panel { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(12px); }
+
         .cobalt-glow { background: radial-gradient(circle at 50% 50%, rgba(46, 91, 255, 0.15) 0%, transparent 60%); }
-        .cyber-grid { background-image: linear-gradient(to right, rgba(46, 91, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(46, 91, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
-        .video-container iframe { width: 100%; height: 100%; aspect-ratio: 16/9; border-radius: 12px; }
+
     </style>
+
 </head>
+
 <body class="antialiased selection:bg-brand-cobalt selection:text-white">
 
-    <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/10">
+
+
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/10 transition-all duration-300">
+
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+
+            
+
             <a href="index.html" class="text-2xl font-bold tracking-tighter uppercase font-heading group">
+
                 Yanex<span class="text-brand-cobalt group-hover:text-white transition-colors">Square</span>
+
             </a>
 
-            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide uppercase text-gray-400">
-                <a href="#services" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-ai">Services</a>
-                <a href="#calculator" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-roi">ROI Calc</a>
-                <a href="#vault" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-wealth">Wealth Stack</a>
-                <button onclick="toggleLanguage()" class="text-xs font-bold border border-white/20 px-3 py-1.5 rounded hover:border-brand-cobalt hover:text-brand-cobalt transition-all">
-                    <span id="lang-display">العربية</span>
-                </button>
+
+
+            <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse text-sm font-semibold tracking-wide uppercase text-gray-400">
+
+                <a href="ai-services.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-ai">AI Services</a>
+
+                <a href="real-estate.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-re">Real Estate</a>
+
+                <a href="wealth.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-wealth">Wealth Hub</a>
+
+                <a href="about.html" class="hover:text-brand-cobalt transition-colors" data-i18n="nav-about">About</a>
+
             </div>
 
-            <a href="#contact" class="bg-brand-cobalt text-white px-6 py-2 rounded text-sm font-bold hover:shadow-[0_0_20px_rgba(46,91,255,0.4)] transition-all" data-i18n="btn-audit">
-                Book Audit
-            </a>
+
+
+            <div class="flex items-center gap-4">
+
+                <button onclick="toggleLanguage()" class="text-xs font-bold border border-white/20 px-3 py-1.5 rounded hover:border-brand-cobalt hover:text-brand-cobalt transition-all">
+
+                    <span id="lang-display">العربية</span>
+
+                </button>
+
+                <a href="#contact" class="hidden md:block bg-brand-cobalt text-white px-6 py-2 rounded text-sm font-bold hover:shadow-[0_0_20px_rgba(46,91,255,0.4)] transition-all" data-i18n="btn-audit">
+
+                    Book Audit
+
+                </a>
+
+            </div>
+
         </div>
+
     </nav>
 
-    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden cyber-grid">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full cobalt-glow opacity-40 pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-            <div class="inline-block px-3 py-1 mb-6 border border-brand-cobalt/30 rounded-full bg-brand-cobalt/10 text-brand-cobalt text-xs font-bold tracking-widest uppercase">
-                v3.0 Sovereign System Active
-            </div>
-            <h1 class="text-5xl md:text-8xl font-bold font-heading leading-tight mb-6">
-                <span data-i18n="hero-h1-1">Future-Proof Your</span> <br />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cobalt to-blue-400" data-i18n="hero-h1-2">Money & Career.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed" data-i18n="hero-sub">
-                We bridge the gap between AI-driven automation and global real estate. Join the 1% who use technology to build sovereign wealth.
-            </p>
+
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] cobalt-glow opacity-60 pointer-events-none animate-pulse-slow"></div>
+
+
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
+
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#services" class="bg-white text-black px-8 py-4 rounded font-bold hover:bg-brand-cobalt hover:text-white transition-all duration-300 text-center" data-i18n="btn-primary">
-                    Explore Our Services
-                </a>
-                <a href="#vault" class="glass-panel text-white px-8 py-4 rounded font-bold border border-white/10 hover:border-brand-cobalt transition text-center" data-i18n="btn-secondary">
-                    Download 2026 AI Wealth Stack
-                </a>
+
+            <div class="text-center md:text-start rtl:md:text-right">
+
+                <div class="inline-block px-3 py-1 mb-6 border border-brand-cobalt/30 rounded-full bg-brand-cobalt/10 text-brand-cobalt text-xs font-bold tracking-widest uppercase">
+
+                    v3.0 System Active
+
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold font-heading leading-[1.1] mb-6">
+
+                    <span data-i18n="hero-h1-1">Engineering</span> <br />
+
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cobalt to-white" data-i18n="hero-h1-2">Sovereign Wealth.</span>
+
+                </h1>
+
+                <p class="text-lg text-gray-400 mb-10 max-w-lg mx-auto md:mx-0 leading-relaxed" data-i18n="hero-sub">
+
+                    We build high-authority digital empires and arbitrage global real estate assets using predictive AI.
+
+                </p>
+
+                
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+
+                    <a href="ai-services.html" class="bg-white text-black px-8 py-4 rounded font-bold hover:bg-gray-200 transition text-center" data-i18n="btn-primary">
+
+                        Explore Systems
+
+                    </a>
+
+                    <a href="about.html" class="glass-panel text-white px-8 py-4 rounded font-bold border border-white/10 hover:border-brand-cobalt transition text-center" data-i18n="btn-secondary">
+
+                        Our Vision
+
+                    </a>
+
+                </div>
+
             </div>
+
+
+
+            <div class="relative hidden md:block group">
+
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-cobalt to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+
+                <div class="glass-panel p-2 rounded-2xl relative">
+
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" 
+
+                         alt="Yanex Headquarters" 
+
+                         class="rounded-xl grayscale hover:grayscale-0 transition duration-700 w-full object-cover h-[500px]">
+
+                    
+
+                    <div class="absolute bottom-8 right-8 glass-panel p-4 rounded-lg border border-brand-cobalt/30 animate-bounce">
+
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Live Efficiency</div>
+
+                        <div class="text-2xl font-bold font-heading text-brand-cobalt">+42.8%</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
     </header>
 
-    <div class="border-y border-white/5 bg-brand-black/50 py-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-                <div class="flex items-center gap-8 flex-wrap justify-center">
-                    <span class="font-bold text-xl tracking-widest">OPENAI</span>
-                    <span class="font-bold text-xl tracking-widest">PYTHON</span>
-                    <span class="font-bold text-xl tracking-widest">META</span>
-                    <span class="font-bold text-xl tracking-widest">AWS</span>
-                </div>
-                <div class="h-px w-20 bg-white/10 hidden md:block"></div>
-                <div class="text-center md:text-right">
-                    <div class="text-brand-cobalt text-2xl font-bold font-heading">10,000+ Hours</div>
-                    <div class="text-xs uppercase tracking-tighter text-gray-500">Automated for clients globally</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <section id="services" class="py-24 px-6 bg-brand-surface relative">
+
+    <section class="py-24 px-6 bg-brand-surface relative">
+
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold font-heading mb-16 text-center" data-i18n="sec-serv-title">Core Ecosystem</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="group glass-panel p-8 rounded-2xl hover:border-brand-cobalt/50 transition-all">
-                    <div class="text-brand-cobalt mb-6"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
-                    <h3 class="text-xl font-bold mb-3 font-heading" data-i18n="card-ai-title">AI & Software Dev</h3>
-                    <p class="text-gray-500 text-sm mb-6" data-i18n="card-ai-desc">Custom AI Agents, Web Portals, and Agentic Workflows that replace manual labor.</p>
-                    <a href="#contact" class="text-brand-cobalt font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all flex items-center gap-2">
-                        Build My System <span>→</span>
-                    </a>
-                </div>
-                <div class="group glass-panel p-8 rounded-2xl hover:border-brand-cobalt/50 transition-all">
-                    <div class="text-brand-cobalt mb-6"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
-                    <h3 class="text-xl font-bold mb-3 font-heading" data-i18n="card-re-title">Real Estate Strategy</h3>
-                    <p class="text-gray-500 text-sm mb-6" data-i18n="card-re-desc">Global Arbitrage and ROI Optimization using predictive market data.</p>
-                    <a href="#contact" class="text-brand-cobalt font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all flex items-center gap-2">
-                        View Market Reports <span>→</span>
-                    </a>
-                </div>
-                <div class="group glass-panel p-8 rounded-2xl hover:border-brand-cobalt/50 transition-all">
-                    <div class="text-brand-cobalt mb-6"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
-                    <h3 class="text-xl font-bold mb-3 font-heading" data-i18n="card-wh-title">Sovereign Mindset</h3>
-                    <p class="text-gray-500 text-sm mb-6" data-i18n="card-wh-desc">High-Income Skill Training and coaching for the digital elite.</p>
-                    <a href="#contact" class="text-brand-cobalt font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all flex items-center gap-2">
-                        Start My Journey <span>→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="py-24 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold font-heading mb-6" data-i18n="dev-log-h">The Dev Log: We build the future.</h2>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    We don't just talk about the future; we build it. Watch how we used predictive analytics to find a $100k equity gap in global real estate.
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 rtl:flex-row-reverse">
+
+                <div>
+
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4" data-i18n="sec-serv-title">Core Ecosystem</h2>
+
+                    <div class="h-1 w-20 bg-brand-cobalt rounded-full"></div>
+
+                </div>
+
+                <p class="text-gray-400 max-w-md text-sm md:text-right rtl:md:text-left" data-i18n="sec-serv-sub">
+
+                    Our three pillars of revenue generation and asset management.
+
                 </p>
-                <div class="p-6 glass-panel rounded-xl border-l-4 border-brand-cobalt">
-                    <p class="italic text-white">"Yanex Square systems reduced our operational overhead by 60% in 3 months."</p>
-                    <p class="mt-4 text-brand-cobalt font-bold">— Sovereign Client #042</p>
-                </div>
-            </div>
-            <div class="video-container glass-panel p-2">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Yanex Dev Log" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
 
-    <section id="calculator" class="py-24 px-6 bg-brand-dark relative overflow-hidden">
-        <div class="absolute -right-20 top-0 w-96 h-96 cobalt-glow opacity-20"></div>
-        <div class="max-w-3xl mx-auto glass-panel p-10 rounded-3xl relative z-10 border-brand-cobalt/20">
-            <h2 class="text-3xl font-bold font-heading mb-2 text-center">AI Efficiency Calculator</h2>
-            <p class="text-gray-500 text-center mb-10 text-sm">Estimate your potential savings with Yanex AI Agents</p>
-            
-            <div class="grid gap-6 mb-8">
-                <div>
-                    <label class="block text-xs uppercase font-bold text-gray-400 mb-2">Monthly Human Labor (Hours)</label>
-                    <input type="number" id="hours" value="160" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-brand-cobalt outline-none transition">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase font-bold text-gray-400 mb-2">Hourly Rate ($)</label>
-                    <input type="number" id="rate" value="25" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-brand-cobalt outline-none transition">
-                </div>
             </div>
 
-            <div class="bg-brand-cobalt/10 border border-brand-cobalt/30 p-8 rounded-2xl text-center">
-                <div class="text-gray-400 text-xs uppercase font-bold mb-1">Estimated Annual Savings</div>
-                <div id="savings-result" class="text-5xl font-bold font-heading text-brand-cobalt">$47,400</div>
-                <div class="text-[10px] text-gray-600 mt-4 uppercase tracking-widest">
-                    Formula: (Hours × Rate) - AI API Maintenance Cost
-                </div>
+
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <a href="ai-services.html" class="group relative glass-panel p-8 rounded-2xl hover:border-brand-cobalt/50 transition-all duration-300">
+
+                    <div class="absolute top-6 right-6 text-brand-cobalt opacity-50 group-hover:opacity-100 text-4xl">01</div>
+
+                    <div class="h-16 w-16 bg-brand-cobalt/10 rounded-lg flex items-center justify-center mb-8 text-brand-cobalt">
+
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 font-heading group-hover:text-brand-cobalt transition-colors" data-i18n="card-ai-title">AI Consultancy</h3>
+
+                    <p class="text-gray-500 text-sm leading-relaxed" data-i18n="card-ai-desc">
+
+                        Custom LLM integration and agentic workflows that replace manual labor with sovereign code.
+
+                    </p>
+
+                    <div class="mt-8 text-xs font-bold uppercase tracking-widest text-white/50 group-hover:text-white flex items-center gap-2">
+
+                        View Specs <span class="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">→</span>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="real-estate.html" class="group relative glass-panel p-8 rounded-2xl hover:border-brand-cobalt/50 transition-all duration-300">
+
+                    <div class="absolute top-6 right-6 text-brand-cobalt opacity-50 group-hover:opacity-100 text-4xl">02</div>
+
+                    <div class="h-16 w-16 bg-brand-cobalt/10 rounded-lg flex items-center justify-center mb-8 text-brand-cobalt">
+
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 font-heading group-hover:text-brand-cobalt transition-colors" data-i18n="card-re-title">Real Estate Alpha</h3>
+
+                    <p class="text-gray-500 text-sm leading-relaxed" data-i18n="card-re-desc">
+
+                        Identifying undervalued global assets using predictive analytics before the market reacts.
+
+                    </p>
+
+                    <div class="mt-8 text-xs font-bold uppercase tracking-widest text-white/50 group-hover:text-white flex items-center gap-2">
+
+                        View Portfolio <span class="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">→</span>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="wealth.html" class="group relative glass-panel p-8 rounded-2xl hover:border-brand-cobalt/50 transition-all duration-300">
+
+                    <div class="absolute top-6 right-6 text-brand-cobalt opacity-50 group-hover:opacity-100 text-4xl">03</div>
+
+                    <div class="h-16 w-16 bg-brand-cobalt/10 rounded-lg flex items-center justify-center mb-8 text-brand-cobalt">
+
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 font-heading group-hover:text-brand-cobalt transition-colors" data-i18n="card-wh-title">Wealth Intelligence</h3>
+
+                    <p class="text-gray-500 text-sm leading-relaxed" data-i18n="card-wh-desc">
+
+                        Content bridging the gap between social viral loops and high-ticket financial freedom.
+
+                    </p>
+
+                    <div class="mt-8 text-xs font-bold uppercase tracking-widest text-white/50 group-hover:text-white flex items-center gap-2">
+
+                        Read Insights <span class="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">→</span>
+
+                    </div>
+
+                </a>
+
             </div>
+
         </div>
+
     </section>
 
-    <section id="vault" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto glass-panel rounded-3xl overflow-hidden flex flex-col md:flex-row items-center border-brand-cobalt/30">
-            <div class="p-12 md:w-1/2">
-                <div class="text-brand-cobalt font-bold mb-4 uppercase tracking-tighter">The 2026 Sovereign Blueprint</div>
-                <h2 class="text-4xl font-bold font-heading mb-6">Stop Reacting. <br/>Start Predicting.</h2>
-                <p class="text-gray-400 mb-8">Get our proprietary AI Wealth Stack and learn how to automate your high-ticket income streams.</p>
-                <form class="flex flex-col sm:flex-row gap-2">
-                    <input type="email" placeholder="Enter your sovereign email" class="flex-1 bg-white/5 border border-white/10 rounded px-4 py-3 outline-none focus:border-brand-cobalt">
-                    <button class="bg-white text-black font-bold px-6 py-3 rounded hover:bg-brand-cobalt hover:text-white transition">Get Access</button>
-                </form>
-            </div>
-            <div class="md:w-1/2 bg-brand-cobalt/20 w-full h-full flex items-center justify-center p-12">
-                <div class="w-64 h-80 bg-brand-surface border-2 border-brand-cobalt rounded-lg shadow-2xl animate-float flex flex-col p-6 relative">
-                    <div class="w-8 h-8 bg-brand-cobalt rounded-full mb-4"></div>
-                    <div class="h-2 w-full bg-white/20 mb-2"></div>
-                    <div class="h-2 w-2/3 bg-white/20 mb-8"></div>
-                    <div class="text-xl font-bold font-heading">2026 <br/>WEALTH <br/>STACK</div>
-                    <div class="absolute bottom-6 right-6 text-xs font-bold text-brand-cobalt uppercase">Confidential</div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <footer id="contact" class="border-t border-white/10 bg-black pt-20 pb-10 px-6">
+
         <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+
             <div class="md:col-span-2">
+
                 <a href="#" class="text-2xl font-bold uppercase font-heading mb-6 block">Yanex<span class="text-brand-cobalt">Square</span></a>
+
                 <p class="text-gray-500 max-w-sm mb-6 text-sm" data-i18n="footer-desc">
+
                     The global standard for sovereign wealth architecture. We build the systems that build your freedom.
+
                 </p>
-                <a href="https://wa.me/923029770128" target="_blank" class="flex items-center gap-4 bg-white/5 border border-white/10 rounded p-4 hover:border-green-500 transition w-fit">
-                    <div class="text-green-500"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
-                    <div class="text-sm font-bold">Chat with our AI Lead</div>
-                </a>
+
+                <a href="https://wa.me/923029770128?text=I%20am%20interested%20in%20Yanex%20Square%20Services." 
+
+                    target="_blank" 
+
+                    class="flex items-center justify-between w-full max-w-md bg-white/5 border border-white/10 rounded px-6 py-4 hover:bg-white/10 hover:border-[#25D366] transition-all duration-300 group cursor-pointer">
+
+                        
+
+                        <div class="flex items-center gap-4">
+
+                            <div class="bg-[#25D366]/20 p-2 rounded-full text-[#25D366] group-hover:scale-110 transition">
+
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+
+                                </svg>
+
+                            </div>
+
+                            <div class="text-left">
+
+                                <div class="text-xs text-gray-500 uppercase tracking-widest font-bold">Secure Line</div>
+
+                                <div class="text-white font-bold text-sm group-hover:text-[#25D366] transition">Chat on WhatsApp</div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="text-gray-500 group-hover:text-white group-hover:translate-x-1 transition duration-300">
+
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+
+                        </div>
+
+                    </a>
+
             </div>
+
+            
+
             <div>
+
                 <h4 class="font-bold font-heading mb-6" data-i18n="footer-link-1">Company</h4>
+
                 <ul class="space-y-4 text-sm text-gray-500">
-                    <li><a href="#" class="hover:text-brand-cobalt transition">About Yanex</a></li>
-                    <li><a href="#" class="hover:text-brand-cobalt transition">Client Portal</a></li>
+
+                    <li><a href="about.html" class="hover:text-brand-cobalt transition">About Yanex</a></li>
+
+                    <li><a href="#contact" class="hover:text-brand-cobalt transition">Contact</a></li>
+
                 </ul>
+
             </div>
+
+            
+
             <div>
+
                 <h4 class="font-bold font-heading mb-6" data-i18n="footer-link-2">Legal</h4>
+
                 <ul class="space-y-4 text-sm text-gray-500">
+
                     <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-white transition">Terms</a></li>
+
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+
                 </ul>
+
             </div>
+
         </div>
-        <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 text-center text-[10px] text-gray-600 tracking-widest uppercase">
-            © 2025 Yanex Square. Engineered for Sovereignty.
+
+        
+
+        <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 tracking-widest uppercase">
+
+            <div>© 2025 Yanex Square. Sovereign Systems.</div>
+
+            <div class="flex gap-4 mt-4 md:mt-0">
+
+                <a href="#" class="hover:text-white">LinkedIn</a>
+
+                <a href="#" class="hover:text-white">Twitter / X</a>
+
+            </div>
+
         </div>
+
     </footer>
 
+
+
     <script>
-        // ROI Calculator Logic
-        const hoursInput = document.getElementById('hours');
-        const rateInput = document.getElementById('rate');
-        const resultDisplay = document.getElementById('savings-result');
 
-        function calculateROI() {
-            const hours = hoursInput.value;
-            const rate = rateInput.value;
-            const apiCost = 50; // Constant monthly API cost
-            const monthlySavings = (hours * rate) - apiCost;
-            const annualSavings = monthlySavings * 12;
-            resultDisplay.textContent = annualSavings > 0 ? '$' + annualSavings.toLocaleString() : '$0';
-        }
-
-        hoursInput.addEventListener('input', calculateROI);
-        rateInput.addEventListener('input', calculateROI);
-
-        // Language Logic
         const translations = {
+
             en: {
-                "nav-ai": "Services", "nav-roi": "ROI Calc", "nav-wealth": "Wealth Stack", "btn-audit": "Book Audit",
-                "hero-h1-1": "Future-Proof Your", "hero-h1-2": "Money & Career.", "hero-sub": "We bridge the gap between AI-driven automation and global real estate.",
-                "btn-primary": "Explore Our Services", "btn-secondary": "2026 AI Wealth Stack", "sec-serv-title": "Core Ecosystem",
-                "card-ai-title": "AI & Software Dev", "card-ai-desc": "Custom AI Agents and automation.",
-                "card-re-title": "Real Estate Strategy", "card-re-desc": "Global Arbitrage and ROI Optimization.",
-                "card-wh-title": "Sovereign Mindset", "card-wh-desc": "Financial coaching and skill training.",
-                "dev-log-h": "The Dev Log: We build the future.", "footer-desc": "The global standard for sovereign wealth architecture."
+
+                "nav-ai": "AI Services",
+
+                "nav-re": "Real Estate",
+
+                "nav-wealth": "Wealth Hub",
+
+                "nav-about": "About",
+
+                "btn-audit": "Book Audit",
+
+                "hero-h1-1": "Engineering",
+
+                "hero-h1-2": "Sovereign Wealth.",
+
+                "hero-sub": "We build high-authority digital empires and arbitrage global real estate assets using predictive AI.",
+
+                "btn-primary": "Explore Systems",
+
+                "btn-secondary": "Our Vision",
+
+                "sec-serv-title": "Core Ecosystem",
+
+                "sec-serv-sub": "Our three pillars of revenue generation and asset management.",
+
+                "card-ai-title": "AI Consultancy",
+
+                "card-ai-desc": "Custom LLM integration and agentic workflows that replace manual labor with sovereign code.",
+
+                "card-re-title": "Real Estate Alpha",
+
+                "card-re-desc": "Identifying undervalued global assets using predictive analytics before the market reacts.",
+
+                "card-wh-title": "Wealth Intelligence",
+
+                "card-wh-desc": "Content bridging the gap between social viral loops and high-ticket financial freedom.",
+
+                "footer-desc": "The global standard for sovereign wealth architecture. We build the systems that build your freedom.",
+
+                "footer-link-1": "Company",
+
+                "footer-link-2": "Legal"
+
             },
+
             ar: {
-                "nav-ai": "الخدمات", "nav-roi": "حساب الربح", "nav-wealth": "خزينة الثروة", "btn-audit": "احجز استشارة",
-                "hero-h1-1": "حصّن مستقبلك", "hero-h1-2": "المالي والمهني.", "hero-sub": "نحن نسد الفجوة بين الأتمتة المعتمدة على الذكاء الاصطناعي والعقارات العالمية.",
-                "btn-primary": "استكشف خدماتنا", "btn-secondary": "حزمة ثروة 2026", "sec-serv-title": "النظام البيئي الأساسي",
-                "card-ai-title": "الذكاء الاصطناعي", "card-ai-desc": "وكلاء ذكاء اصطناعي مخصصون وأتمتة شاملة.",
-                "card-re-title": "استراتيجية العقارات", "card-re-desc": "المراجحة العالمية وتحسين العائد الاستثماري.",
-                "card-wh-title": "عقلية السيادة", "card-wh-desc": "التدريب المالي وتطوير المهارات عالية الدخل.",
-                "dev-log-h": "سجل التطوير: نحن نبني المستقبل.", "footer-desc": "المعيار العالمي لهندسة الثروة السيادية."
+
+                "nav-ai": "خدمات الذكاء الاصطناعي",
+
+                "nav-re": "الاستثمار العقاري",
+
+                "nav-wealth": "مركز الثروة",
+
+                "nav-about": "من نحن",
+
+                "btn-audit": "احجز استشارة",
+
+                "hero-h1-1": "هندسة",
+
+                "hero-h1-2": "الثروة السيادية.",
+
+                "hero-sub": "نقوم ببناء إمبراطوريات رقمية ذات سلطة عالية ومراجحة الأصول العقارية العالمية باستخدام الذكاء الاصطناعي التنبؤي.",
+
+                "btn-primary": "استكشف الأنظمة",
+
+                "btn-secondary": "رؤيتنا",
+
+                "sec-serv-title": "النظام البيئي الأساسي",
+
+                "sec-serv-sub": "ركائزنا الثلاث لتوليد الإيرادات وإدارة الأصول.",
+
+                "card-ai-title": "استشارات الذكاء الاصطناعي",
+
+                "card-ai-desc": "دمج نماذج اللغة الكبيرة وسير عمل الوكلاء لاستبدال العمل اليدوي برمز سيادي.",
+
+                "card-re-title": "ألفا العقارية",
+
+                "card-re-desc": "تحديد الأصول العالمية المقومة بأقل من قيمتها باستخدام التحليلات التنبؤية قبل تفاعل السوق.",
+
+                "card-wh-title": "ذكاء الثروة",
+
+                "card-wh-desc": "محتوى يسد الفجوة بين حلقات الانتشار الاجتماعي والحرية المالية عالية التكلفة.",
+
+                "footer-desc": "المعيار العالمي لهندسة الثروة السيادية. نحن نبني الأنظمة التي تبني حريتك.",
+
+                "footer-link-1": "الشركة",
+
+                "footer-link-2": "قانوني"
+
             }
+
         };
 
+
+
         let currentLang = 'en';
+
+
+
         function toggleLanguage() {
+
             currentLang = currentLang === 'en' ? 'ar' : 'en';
+
             const html = document.documentElement;
+
+            const langBtn = document.getElementById('lang-display');
+
+            
+
+            // Set HTML attributes
+
             html.lang = currentLang;
+
             html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.getElementById('lang-display').textContent = currentLang === 'en' ? 'العربية' : 'English';
+
+            
+
+            // Update Button Text
+
+            langBtn.textContent = currentLang === 'en' ? 'العربية' : 'English';
+
+
+
+            // Apply Translations
+
             document.querySelectorAll('[data-i18n]').forEach(el => {
+
                 const key = el.getAttribute('data-i18n');
-                if(translations[currentLang][key]) el.textContent = translations[currentLang][key];
+
+                if(translations[currentLang][key]) {
+
+                    el.textContent = translations[currentLang][key];
+
+                }
+
             });
+
         }
+
     </script>
 
-    <script>
-    document.querySelector('#vault form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const emailInput = e.target.querySelector('input');
-        const submitBtn = e.target.querySelector('button');
-        const email = emailInput.value;
-
-        // Visual feedback
-        submitBtn.textContent = "Processing...";
-        submitBtn.disabled = true;
-
-        try {
-            const response = await fetch('https://yanexsquare.pythonanywhere.com/send-blueprint', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email })
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                alert("The Sovereign Blueprint is on its way to your inbox!");
-                emailInput.value = "";
-            } else {
-                alert("System error: " + result.message);
-            }
-        } catch (error) {
-            alert("Could not connect to the Yanex API. Ensure the Flask server is running.");
-        } finally {
-            submitBtn.textContent = "Get Access";
-            submitBtn.disabled = false;
-        }
-    });
-</script>
 </body>
 
 </html>
